@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<image name="image1">	
+		<object>книга</object>
+		<text>джордж оруэлл 1984 книги изменившие мир писатели объединившие покления</text>
+	</image>
+	<image name ="image2">
+		<object>книга человек</object>
+		<text> федор достоевский двойник лабиринт.ру</text>
+	</image>
+	<image name ="image3">
+		<object>торт тарелка</object>
+		<text>happy day sweet biscuit</text>
+	</image>
+	<image name ="image4">
+		<object>человек футболка</object>
+		<text>levis</text>
+	</image>
+	<image name ="image5">
+		<object>книга</object>
+		<text>михаил булгаков мастер и маргарита</text>
+	</image>
+	<image name ="image6">
+		<object>знак</object>
+		<text>р</text>
+	</image>
+	<image name ="image7">
+		<object>книга стул</object>
+		<text>илья илья евгений петров двенадцать стульев</text>
+	</image>
+</metadata>

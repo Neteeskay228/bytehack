@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLOv8 Object Detection</title>
+</head>
+<body>
+    <h1>YOLOv8 Object Detection</h1>
+
+    <!-- File upload form -->
+    <h2>Upload an Image</h2>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" multiple>
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- Search form -->
+    <h2>Search Images</h2>
+    <form method="GET" action="/">
+        <input type="text" name="search" placeholder="Search by description" value="{{ search_query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display images -->
+    {% for image in images %}
+        <div>
+            <h3>Original Image</h3>
+            <img src="{{ url_for('images', filename=image.filename) }}" alt="{{ image.filename }}" width="300">
+
+            <h3>Processed Image</h3>
+            <img src="{{ url_for('static', filename='processed/' + image.filename) }}" alt="Processed {{ image.filename }}" width="300">
+
+            <p><strong>YOLO Description:</strong> {{ image.yolo_description }}</p>
+            <p><strong>User Description:</strong> {{ image.user_description }}</p>
+
+            <!-- User description form -->
+            <form method="POST">
+                <input type="hidden" name="filename" value="{{ image.filename }}">
+                <input type="text" name="user_description" placeholder="Enter description" value="{{ image.user_description }}">
+                <button type="submit">Save Description</button>
+            </form>
+        </div>
+    {% endfor %}
+</body>
+</html>
